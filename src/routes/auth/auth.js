@@ -18,7 +18,7 @@ router.post("/login", async (req, res) => {
     if (user?.password == password) {
       const token = user.getToken();
       console.log(token);
-      res.cookie("token", token, { maxAge: 864000000, httpOnly: true });
+      res.cookie("token", token, { maxAge: 864000000, httpOnly: true});
       res.status(200).json(new ApiResponse(200, user));
     } else {
       return res
